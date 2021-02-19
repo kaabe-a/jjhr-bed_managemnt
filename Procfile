@@ -1,1 +1,1 @@
-web: gunicorn jjhr_bed_managemnt.wsgi
+web: gunicorn jjrhospital.wsgi
