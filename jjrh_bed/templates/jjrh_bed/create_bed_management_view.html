@@ -1,40 +1,49 @@
 {%extends 'base.html'%}
+{%load crispy_forms_tags%}
 {%block content%}
-<form method="POST">
-	{%csrf_token%}
-	<div class="table-responsive-lg">
-  <table class="table">
-   	<thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Timr</th>
-      <th scope="col">Medical ward A Male</th>
-      <th scope="col">Medical ward A Female</th>
-      <th scope="col">Medical ward B Male</th>
-      <th scope="col">Medical ward B Female</th>
-      <th scope="col">Medical ward C Male</th>
-      <th scope="col">Medical ward C Female</th>
-      <th scope="col">actions</th>
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-2">
+      
+    </div>
+    <div class="col-sm-8">
+      <form method="post">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-5 mb-0">
+        {{ form.Date|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-5 mb-0">
+        {{ form.Time|as_crispy_field }}
+      </div>
+    </div>
+   <div class="form-group col-md-7">
+      {{ form.M_A_W_male|as_crispy_field }}
+    {{ form.M_A_W_female|as_crispy_field }}
+   </div>
+    <div class="form-row">
+      <div class="form-group col-md-7 mb-0">
+        {{ form.M_B_W_male|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-7 mb-0">
+        {{ form.M_B_W_female|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-7 mb-0">
+        {{ form.M_C_W_male|as_crispy_field }}
+      </div>
+    </div>
+    <div class="form-group col-md-7">
+      {{ form.M_C_W_female|as_crispy_field }}
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+    </div>
+    <div class="col-md-2">
+      
+    </div>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{form.Date}}</th>
-      <td>{{form.Time}}</td>
-      <td>{{form.M_A_W_male}}</td>
-      <td>{{form.M_A_W_female}}</td>
-      <td>{{form.M_B_W_male}}</td>
-      <td>{{form.M_B_W_female}}</td>
-      <td>{{form.M_C_W_male}}</td>
-      <td>{{form.M_C_W_male}}</td>
-      <td>
-      <input class="btn btn-info" type="submit" value="register">
-      </td>
-
-    </tr>
-  </tbody>
-  </table>
+  </div>
 </div>
-</form>
 {%endblock%}

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 STATUS_CHOICES = (
         ('Morning','Morning'),
         ('Evening','Evening'),
@@ -21,3 +21,6 @@ class BedMnagement(models.Model):
 
 	def __str__(self):
 		return self.Time
+	def get_absolute_url(self):
+		return reverse('jjrh_bed:detail', kwargs={'id':self.id})
+		
