@@ -1,2 +1,2 @@
-# jjhr-bed_managemnt
+# jjhr_bed_managemnt
 Jigjiga referal hospital
