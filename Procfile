@@ -1,0 +1,1 @@
+web: gunicorn jjhr_bed_managemnt.wsgi

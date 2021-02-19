@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block content%}
+<form method="POST">
+	{%csrf_token%}
+	<div class="table-responsive-lg">
+  <table class="table">
+   	<thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Timr</th>
+      <th scope="col">Medical ward A Male</th>
+      <th scope="col">Medical ward A Female</th>
+      <th scope="col">Medical ward B Male</th>
+      <th scope="col">Medical ward B Female</th>
+      <th scope="col">Medical ward C Male</th>
+      <th scope="col">Medical ward C Female</th>
+      <th scope="col">actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{form.Date}}</th>
+      <td>{{form.Time}}</td>
+      <td>{{form.M_A_W_male}}</td>
+      <td>{{form.M_A_W_female}}</td>
+      <td>{{form.M_B_W_male}}</td>
+      <td>{{form.M_B_W_female}}</td>
+      <td>{{form.M_C_W_male}}</td>
+      <td>{{form.M_C_W_male}}</td>
+      <td>
+      <input class="btn btn-info" type="submit" value="register">
+      </td>
+
+    </tr>
+  </tbody>
+  </table>
+</div>
+</form>
+{%endblock%}

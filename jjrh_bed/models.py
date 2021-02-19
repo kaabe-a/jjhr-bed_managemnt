@@ -20,4 +20,4 @@ class BedMnagement(models.Model):
 	M_C_W_female = models.CharField('Medical ward C Female',max_length=225)
 
 	def __str__(self):
-		return self.Date, self.Time
+		return self.Time
