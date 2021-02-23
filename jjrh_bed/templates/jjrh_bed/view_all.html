@@ -1,0 +1,32 @@
+{%extends 'dashboard_base.html'%}
+{%block content%}
+<div class="table-responsive-lg">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Unit Names</th>
+      <th scope="col">All Beds</th>
+      <th scope="col">Free Beds</th>
+      <th scope="col">Occupied Beds</th>
+      <th scope="col">Impeding Beds</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for unitname in unitnames%}
+    <tr>
+      <td> {{unitname.unit_name}}</td>
+  <td>{{unitname.all_beds}}</td>
+  <td>{{unitname.free_beds}}</td>
+  <td>{{unitname.occupied_beds}}</td>
+  <td>{{unitname.impeding_beds}}</td>  
+      <td>
+      <a href="">download</a>
+      </td>
+
+    </tr>
+{%endfor%}
+  </tbody>
+  </table>
+</div>
+{%endblock%}

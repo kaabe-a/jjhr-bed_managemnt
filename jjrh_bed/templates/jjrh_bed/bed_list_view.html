@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+	<div class="table-responsive-lg">
+  <table class="table">
+   	<thead>
+    <tr>
+      <th scope="col">Unit name</th>
+      <th scope="col">bed number</th>
+      <th scope="col">bed status</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for bed in beds%}
+    <tr>
+      <td> {{bed.unitname}}</td>
+      <td> {{bed.bed_number}}</td>
+      <td> {{bed.status}}</td>
+      <td>
+      <a href="{% url 'jjrh_bed:detail' bed.id %}">View</a>
+      </td>
+    </tr>
+{%endfor%}
+  </tbody>
+  </table>
+</div>
+</div>
+{%endblock%}
+
+
+
+

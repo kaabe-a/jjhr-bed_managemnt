@@ -1,21 +1,29 @@
 {%extends 'base.html'%}
 {%block content%}
-<div class="container">
-	<h3>JJU SH.Y.R.H TOTAL BED NUMBER</h3>
-	1. MEDICAL WARD (76)<br>
-		MALE <br>
-		FEMALE <br>
-	Date:{{bed.Date}}<br>
-{{bed.Time}}<br>
-Medical A Male: {{bed.M_A_W_male}}<br>
-Medical A Female: {{bed.M_A_W_female}}<br>
-<br>
-Medical B Male:{{bed.M_B_W_male}}<br>
-Medical B Female: {{bed.M_B_W_female}}<br>
-<br>
-Medical C Male: {{bed.M_C_W_male}}<br>
-Medical C Female: {{bed.M_C_W_female}}<br>
+		<h3>JJU SH.Y.R.H TOTAL BED NUMBER</h3>
+	<div class="table-responsive-lg">
+	<table class="table">
+	<thead>
+		<tr>
+		<th scope="col">Unit Name</th>
+		<th scope="col">Bed Number</th>
+		<th scope="col">Bed Status</th>
+		<th scope="col">Update</th>
+		<th scope="col">Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{bed.unitname}}</td>
+			<td>{{bed.bed_number}}</td>
+			<td>{{bed.status}}</td>
+			<td> <a href="{% url 'jjrh_bed:update' bed.id %}">Update</a></td>
+			<td><a href="{% url 'jjrh_bed:delete' bed.id %}">delete</a></td>
 
-<a href="">Download</a>
+		
+		</tr>
+	</tbody>
+	</table>
 </div>
+
 {%endblock%}

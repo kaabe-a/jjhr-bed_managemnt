@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+	<div class="table-responsive-lg">
+  <table class="table">
+   	<thead>
+    <tr>
+      <th scope="col">Unit name</th>
+      <th scope="col">Date</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for unitname in unitnames%}
+    <tr>
+      <td> {{unitname.unit_name}}</td>
+      <td> {{unitname.Date}}</td>
+      <td>
+      <a href="{% url 'jjrh_bed:units_detail' unitname.id %}">View</a>
+      </td>
+    </tr>
+{%endfor%}
+  </tbody>
+  </table>
+</div>
+</div>
+{%endblock%}
+
+
+
+
